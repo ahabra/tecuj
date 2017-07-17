@@ -23,7 +23,7 @@ You can contact the author at ahabra@yahoo.com
 package com.tek271.util.collections.map;
 
 import java.util.*;
-import org.apache.commons.collections.map.LinkedMap;
+import org.apache.commons.collections4.map.LinkedMap;
 
 /**
  * A map whose values are the time stamp of addition to the map. The elements in the

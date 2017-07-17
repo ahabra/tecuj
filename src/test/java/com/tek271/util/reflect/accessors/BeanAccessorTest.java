@@ -8,6 +8,7 @@ import java.util.Map;
 import junit.framework.TestCase;
 
 import com.tek271.util.collections.CollectionUtility;
+import org.apache.commons.collections4.CollectionUtils;
 
 public class BeanAccessorTest extends TestCase {
 
@@ -78,7 +79,7 @@ public class BeanAccessorTest extends TestCase {
     mt.name= "Abdul";
     String[] props= {"age", "name"};
     List list= new ArrayList();
-    CollectionUtility.addAll(list, props);
+    CollectionUtils.addAll(list, props);
     
     Map map= BeanAccessor.get(mt, list);
     

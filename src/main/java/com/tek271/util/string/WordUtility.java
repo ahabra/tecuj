@@ -23,8 +23,8 @@ You can contact the author at ahabra@yahoo.com
 
 package com.tek271.util.string;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.text.WordUtils;
 
 public class WordUtility extends WordUtils {
 

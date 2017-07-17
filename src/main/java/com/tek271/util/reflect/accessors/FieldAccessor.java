@@ -29,6 +29,7 @@ import java.util.List;
 
 import com.tek271.util.collections.CollectionUtility;
 import com.tek271.util.string.StringUtility;
+import org.apache.commons.collections4.CollectionUtils;
 
 public class FieldAccessor {
 
@@ -41,7 +42,7 @@ public class FieldAccessor {
     List list= new ArrayList();
     while (cls != null) {
       Field[] f= cls.getDeclaredFields();
-      CollectionUtility.addAll(list, f);
+      CollectionUtils.addAll(list, f);
       cls= cls.getSuperclass();
     }
     int n= list.size();

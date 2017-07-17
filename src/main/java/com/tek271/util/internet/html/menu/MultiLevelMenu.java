@@ -26,7 +26,7 @@ package com.tek271.util.internet.html.menu;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.tek271.util.collections.CollectionUtility;
 import com.tek271.util.internet.html.HtmlUtil;

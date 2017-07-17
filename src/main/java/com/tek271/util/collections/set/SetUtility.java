@@ -23,17 +23,18 @@ You can contact the author at ahabra@yahoo.com
 
 package com.tek271.util.collections.set;
 
+import org.apache.commons.collections4.SetUtils;
+
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.commons.collections.SetUtils;
 
 /**
  * @author Abdul Habra. Copyright &copy; Abdul Habra 2008.
  */
-public class SetUtility extends SetUtils {
-  
-  /** Create a set from the given array */  
+public class SetUtility {
+
+  /** Create a set from the given array */
   public static Set toSet(Object[] values) {
     if (values==null) return null;
     Set r= new HashSet();

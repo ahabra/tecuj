@@ -1,9 +1,12 @@
 package com.tek271.util.collections.map;
 
-import junit.framework.*;
-import java.util.*;
-import org.apache.commons.collections.*;
-import org.apache.commons.collections.map.*;
+import junit.framework.TestCase;
+import org.apache.commons.collections4.MapIterator;
+import org.apache.commons.collections4.map.LinkedMap;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class MapUtilityTest extends TestCase {
 
@@ -81,7 +84,7 @@ public class MapUtilityTest extends TestCase {
     LinkedMap map= new LinkedMap();
     map.put("1", "a");
     map.put("2", "b");
-    for (MapIterator i= map.orderedMapIterator() ; i.hasNext(); ) {
+    for (MapIterator i = map.mapIterator(); i.hasNext(); ) {
       i.next();
       System.out.println(i.getKey() + "= " + i.getValue() );
     }

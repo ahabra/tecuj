@@ -30,7 +30,7 @@ import javax.xml.parsers.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.InputSource;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import com.tek271.util.log.*;
 import com.tek271.util.collections.list.*;
 import com.tek271.util.string.StringUtility;

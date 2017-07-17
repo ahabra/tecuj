@@ -23,7 +23,7 @@ You can contact the author at ahabra@yahoo.com
 
 package com.tek271.util.reflect;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 /**
  * Utility class that define primitive types, their wrappers, and other basic types

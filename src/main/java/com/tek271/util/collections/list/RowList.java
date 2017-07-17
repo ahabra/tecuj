@@ -25,7 +25,7 @@ package com.tek271.util.collections.list;
 
 import java.io.*;
 import java.util.*;
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import com.tek271.util.string.StringUtility;
 import com.tek271.util.collections.array.ArrayUtilities;
 import com.tek271.util.reflect.builder.*;

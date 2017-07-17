@@ -22,7 +22,7 @@ You can contact the author at ahabra@yahoo.com
 */
 package com.tek271.util.string;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  * Different string escapeing methods.
@@ -140,7 +140,7 @@ public class StringEscapeUtility extends StringEscapeUtils {
     int n= StringUtility.length(aString);
     if (n==0) return StringUtility.EMPTY;
     if (!aIsEscapeAll) {
-      return StringEscapeUtils.escapeHtml(aString);
+      return StringEscapeUtils.escapeHtml4(aString);
     }
 
     StringBuffer buf= new StringBuffer(n*6);
@@ -164,7 +164,7 @@ public class StringEscapeUtility extends StringEscapeUtils {
     String st2= "AB<C1";
     System.out.println(escapeHtml(ch2));
     System.out.println(escapeHtml(st2, true));
-    System.out.println(escapeHtml(st2));
+    System.out.println(escapeHtml4(st2));
 
   }
 }  // StringEscapeUtility

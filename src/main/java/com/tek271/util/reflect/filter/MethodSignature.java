@@ -24,8 +24,8 @@ package com.tek271.util.reflect.filter;
 
 import java.lang.reflect.Method;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Encapsulates the signature of a method, ie, its name and parameters types.

@@ -30,6 +30,7 @@ import com.tek271.util.collections.CollectionUtility;
 import com.tek271.util.io.FileIO;
 import com.tek271.util.log.ILogger;
 import com.tek271.util.xml.XmlTree;
+import org.apache.commons.collections4.CollectionUtils;
 
 /**
  * Create a MultiLevelMenu from XML.
@@ -67,7 +68,7 @@ public class XmlMultiLevelMenu {
     
     MultiLevelMenu menu= new MultiLevelMenu(text, href, target);
     List children= xmlTree.getChildren("mi");
-    if (CollectionUtility.isEmpty(children)) return menu;
+    if (CollectionUtils.isEmpty(children)) return menu;
     
     for (int i=0, n=children.size(); i<n; i++) {
       XmlTree xmlChild= (XmlTree) children.get(i);

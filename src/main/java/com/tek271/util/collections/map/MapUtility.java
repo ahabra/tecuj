@@ -24,8 +24,8 @@ You can contact the author at ahabra@yahoo.com
 package com.tek271.util.collections.map;
 
 import java.util.*;
-import org.apache.commons.collections.MapUtils;
 import com.tek271.util.collections.array.ArrayUtilities;
+import org.apache.commons.collections4.MapUtils;
 
 /**
  * Static utility map-related methods.
@@ -33,16 +33,16 @@ import com.tek271.util.collections.array.ArrayUtilities;
  * @author Abdul Habra
  * @version 1.0
  */
-public class MapUtility extends MapUtils {
+public class MapUtility {
 
   /**
    * Create a map whose keys are the given keys array, and values are the given
    * values array.
    */
   public static Map toMap(final Object[] aKeys, final Object[] aValues) {
-    if (aKeys==null)  return EMPTY_MAP;
+    if (aKeys==null)  return Collections.EMPTY_MAP;
     int n= aKeys.length;
-    if (n==0) return EMPTY_MAP;
+    if (n==0) return Collections.EMPTY_MAP;
     int valuesLength= ArrayUtilities.length(aValues);
 
     Map map= new HashMap(n);
@@ -65,9 +65,9 @@ public class MapUtility extends MapUtils {
  * @return Map
  */
   public static Map toMap(final Object[][] aKeyValues) {
-    if (aKeyValues==null) return EMPTY_MAP;
+    if (aKeyValues==null) return Collections.EMPTY_MAP;
     int n= aKeyValues.length;
-    if (n==0) return EMPTY_MAP;
+    if (n==0) return Collections.EMPTY_MAP;
 
     Map map= new HashMap(n);
     for(int i=0; i<n; i++) {

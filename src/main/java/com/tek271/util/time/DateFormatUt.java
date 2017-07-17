@@ -26,7 +26,7 @@ package com.tek271.util.time;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
-import org.apache.commons.lang.time.*;
+import org.apache.commons.lang3.time.*;
 import com.tek271.util.string.StringUtility;
 
 /**

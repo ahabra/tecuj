@@ -23,14 +23,14 @@ You can contact the author at ahabra@yahoo.com
 
 package com.tek271.util.collections.array;
 
+import com.tek271.util.collections.list.ListOfString;
+import com.tek271.util.string.StringUtility;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.ObjectUtils;
+
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
-
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.ObjectUtils;
-import com.tek271.util.collections.list.*;
-import com.tek271.util.string.StringUtility;
 
 /**
  * Generic array methods including different overloaded

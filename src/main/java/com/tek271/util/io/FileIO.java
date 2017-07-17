@@ -34,7 +34,7 @@ import java.io.PrintStream;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.tek271.util.collections.list.ListOfString;
 import com.tek271.util.reflect.ReflectUtil;

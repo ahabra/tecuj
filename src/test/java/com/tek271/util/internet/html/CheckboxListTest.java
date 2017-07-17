@@ -1,15 +1,13 @@
 package com.tek271.util.internet.html;
 
-import java.io.IOException;
-
-import junit.framework.TestCase;
-
-import org.apache.commons.lang.StringUtils;
-
 import com.tek271.util.internet.html.CheckboxList.CheckboxInfo;
 import com.tek271.util.internet.html.CheckboxList.ICheckboxListCallback;
 import com.tek271.util.io.FileIO;
 import com.tek271.util.string.StringUtility;
+import junit.framework.TestCase;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.IOException;
 
 public class CheckboxListTest extends TestCase {
 

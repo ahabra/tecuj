@@ -23,8 +23,8 @@ You can contact the author at ahabra@yahoo.com
 package com.tek271.util.log;
 
 import java.text.*;
-import org.apache.commons.collections.map.LRUMap;
-import org.apache.commons.collections.MapIterator;
+import org.apache.commons.collections4.map.LRUMap;
+import org.apache.commons.collections4.MapIterator;
 
 import com.tek271.util.string.*;
 import com.tek271.util.time.DateFormatUt;

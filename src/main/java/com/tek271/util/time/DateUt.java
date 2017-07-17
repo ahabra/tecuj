@@ -24,7 +24,7 @@ You can contact the author at ahabra@yahoo.com
 package com.tek271.util.time;
 
 import java.util.*;
-import org.apache.commons.lang.time.*;
+import org.apache.commons.lang3.time.*;
 
 /**
  * Date/Time functions.

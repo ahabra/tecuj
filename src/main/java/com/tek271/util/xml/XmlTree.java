@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 import com.tek271.util.collections.CollectionUtility;
 import com.tek271.util.collections.list.ListOfString;
@@ -372,7 +372,7 @@ public class XmlTree implements Cloneable {
 /**
  * Convert the contents of aNode into an xml string and append it to aBuf.
  * @param aBuf StringBuffer The string buffer to append to.
- * @param aDom aNode The XmlTree node to convert to xml.
+ * @param aNode aNode The XmlTree node to convert to xml.
  * @param aIndent int Indentation size.
  * @history 2006.06.14 - Abdul Habra: fixed a bug where special characters are encoded
  * twice. Fix created by Doug Estep.

@@ -23,7 +23,7 @@ You can contact the author at ahabra@yahoo.com
 
 package com.tek271.util.internet.html;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.tek271.util.string.*;
 import com.tek271.util.collections.list.*;

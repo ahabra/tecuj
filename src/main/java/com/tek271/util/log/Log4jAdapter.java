@@ -26,10 +26,13 @@ package com.tek271.util.log;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.Level;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.PropertyConfigurator;
+//import org.apache.log4j.Level;
 import com.tek271.util.io.FileIO;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * <p>Implements the ILogger interface using Log4j </p>
@@ -46,8 +49,8 @@ public class Log4jAdapter extends AbstractLogger {
 
 /** Create an object using the given properties file name */
   public Log4jAdapter(final String aPropertiesFileName) {
-    pLog4j= Logger.getLogger(Log4jAdapter.class);
-    PropertyConfigurator.configure(aPropertiesFileName);
+    pLog4j= LogManager.getLogger(Log4jAdapter.class);
+//    PropertyConfigurator.configure(aPropertiesFileName);
   }
 
 /** Create a default logger.  */
@@ -66,28 +69,28 @@ public class Log4jAdapter extends AbstractLogger {
  * @param aIsCloseStream boolean If true, close the stream after reading it.
  * @throws IOException if the Properties.load() or InputStream.close() failed.
  */
-  public Log4jAdapter(final InputStream aPropertiesInputStream,
-                      final boolean aIsCloseStream) throws IOException {
-    pLog4j= Logger.getLogger(Log4jAdapter.class);
-    Properties prop= new Properties();
-    try {
-      prop.load(aPropertiesInputStream);
-      PropertyConfigurator.configure(prop);
-    } finally {
-      if (aIsCloseStream) aPropertiesInputStream.close();
-    }
-  }  // Log4jAdapter
+//  public Log4jAdapter(final InputStream aPropertiesInputStream,
+//                      final boolean aIsCloseStream) throws IOException {
+//    pLog4j= LogManager.getLogger(Log4jAdapter.class);
+//    Properties prop= new Properties();
+//    try {
+//      prop.load(aPropertiesInputStream);
+//      PropertyConfigurator.configure(prop);
+//    } finally {
+//      if (aIsCloseStream) aPropertiesInputStream.close();
+//    }
+//  }  // Log4jAdapter
 
 /** Create an object using the given input stream. useful with servlets */
-  public Log4jAdapter(final InputStream aPropertiesInputStream) throws IOException {
-    this(aPropertiesInputStream, false);
-  }
+//  public Log4jAdapter(final InputStream aPropertiesInputStream) throws IOException {
+//    this(aPropertiesInputStream, false);
+//  }
 
 /** Creates an object using the given URL. */ 
-  public Log4jAdapter(final URL aConfigUrl) { 
-    pLog4j = Logger.getLogger(Log4jAdapter.class); 
-    PropertyConfigurator.configure(aConfigUrl);
-  }
+//  public Log4jAdapter(final URL aConfigUrl) {
+//    pLog4j = LogManager.getLogger(Log4jAdapter.class);
+//    PropertyConfigurator.configure(aConfigUrl);
+//  }
 
   public void log(final int aLevel, final String aMsg, final Throwable aThrowable) {
     Level lvl= mapLog4jLevel(aLevel);
@@ -115,25 +118,25 @@ public class Log4jAdapter extends AbstractLogger {
  * @return ILogger a Log4jAdapter instance. If an error happen, return null, and
  *         write error messages to console.
  */
-  public static ILogger create(final String aPropertiesFileName) {
-    String method= "create";
-    ILogger r= SimpleConsoleLogger.LOGGER;
-    ClassLogger clog= new ClassLogger(r, pCLASS_NAME);
-    InputStream is= FileIO.readFileToStream(aPropertiesFileName);
-    if (is==null) {
-      clog.error(method, "Cannot find " + aPropertiesFileName);
-      return null;
-    }
-
-    try {
-      r=new Log4jAdapter(is, true);  // will close stream
-    } catch (Exception e) {
-      String msg= "Cannot create a Log4J adapter using " + aPropertiesFileName;
-      clog.error(method, msg, e);
-      return null;
-    }
-    return r;
-  }  // create
+//  public static ILogger create(final String aPropertiesFileName) {
+//    String method= "create";
+//    ILogger r= SimpleConsoleLogger.LOGGER;
+//    ClassLogger clog= new ClassLogger(r, pCLASS_NAME);
+//    InputStream is= FileIO.readFileToStream(aPropertiesFileName);
+//    if (is==null) {
+//      clog.error(method, "Cannot find " + aPropertiesFileName);
+//      return null;
+//    }
+//
+//    try {
+//      r=new Log4jAdapter(is, true);  // will close stream
+//    } catch (Exception e) {
+//      String msg= "Cannot create a Log4J adapter using " + aPropertiesFileName;
+//      clog.error(method, msg, e);
+//      return null;
+//    }
+//    return r;
+//  }  // create
 
 
 }  // Log4jAdapter

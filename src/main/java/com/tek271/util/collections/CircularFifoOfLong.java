@@ -171,7 +171,7 @@ public class CircularFifoOfLong {
 
   /**
    * Increments the internal index.
-   * @param index  the index to increment
+   * @param aIndex  the index to increment
    * @return the updated index
    */
   private int increment(int aIndex) {
@@ -182,7 +182,7 @@ public class CircularFifoOfLong {
 
   /**
    * Decrements the internal index.
-   * @param index  the index to decrement
+   * @param aIndex  the index to decrement
    * @return the updated index
    */
   private int decrement(int aIndex) {

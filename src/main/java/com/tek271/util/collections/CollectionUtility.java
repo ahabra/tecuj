@@ -22,8 +22,7 @@ You can contact the author at ahabra@yahoo.com
 */
 package com.tek271.util.collections;
 
-import java.util.*;
-import org.apache.commons.collections.CollectionUtils;
+import java.util.Collection;
 
 /**
  * Different collections utility methods. Extends the Jakarta CollectionUtils class.
@@ -31,9 +30,9 @@ import org.apache.commons.collections.CollectionUtils;
  * @author Abdul Habra
  * @version 1.0
  */
-public class CollectionUtility extends CollectionUtils {
+public class CollectionUtility  {
 
-/** Check if the given index is a valid index for the given collection */
+  /** Check if the given index is a valid index for the given collection */
   public static boolean isValidIndex(final Collection aCollection, final int aIndex) {
     if (aCollection==null) return false;
     if (aIndex<0) return false;
@@ -55,14 +54,6 @@ public class CollectionUtility extends CollectionUtils {
 /** Checks if the given collection is null or has no elements */
   public static boolean isNullOrEmpty(final Collection aCollection) {
     return size(aCollection)==0;
-  }
-  
-/** Add the given array to the given collection */  
-  public static void addAll(final Collection aCollection,
-                            final Object[] aArray) {
-    for (int i=0, n=aArray.length; i<n; i++) {
-      aCollection.add(aArray[i]);
-    }
   }
   
 }  // CollectionUtility

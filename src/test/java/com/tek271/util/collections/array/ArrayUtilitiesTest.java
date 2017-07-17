@@ -6,6 +6,7 @@ import java.util.Collection;
 import com.tek271.util.collections.CollectionUtility;
 
 import junit.framework.TestCase;
+import org.apache.commons.collections4.CollectionUtils;
 
 public class ArrayUtilitiesTest extends TestCase {
 
@@ -23,7 +24,7 @@ public class ArrayUtilitiesTest extends TestCase {
   public void testToArrayOfStringCollection() {
     Object[] objs= {"hello", "world", new Integer(44), Boolean.FALSE };
     Collection col= new ArrayList();
-    CollectionUtility.addAll(col, objs);
+    CollectionUtils.addAll(col, objs);
     String[] strs= ArrayUtilities.toArrayOfString(col);
     assertNotNull(strs);
     assertEquals(objs.length, strs.length);
