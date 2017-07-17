@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menu>
+  <mi text='Home' href='home.html' />
+  <mi text='Call for Papers' href='' />
+  <mi text='Workshops &amp; Sessions' href='' >
+    <mi text='Workshops' href='' >
+      <mi text='COLSEC' href='' >
+      </mi>
+      <mi text='Culture' href='' >
+      </mi>
+      <mi text='CoGames' href='' >
+      </mi>
+    </mi>
+    
+    <mi text='Special Sessions' href='' >
+      <mi text='Vis &amp; Coll' href='' >
+      </mi>
+      <mi text='Trusted Sensing' href='' >
+      </mi>
+    </mi>
+  </mi>
+  
+  <mi text='Committees' href='' >
+    <mi text='Advisory Comm.' href='' />
+    <mi text='Organizing Comm.' href='' />
+    <mi text='ITPC' href='' />
+  </mi>
+  
+</menu>
