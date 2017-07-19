@@ -37,8 +37,7 @@ public class ListOfStringTest extends TestCase {
   
   public void testReadFromTextFileInContext() throws IOException {
     ListOfString list= new ListOfString();
-    String file= ReflectUtil.getPackageDirectoryOfClass(this.getClass()) + "/a.txt"; 
-    list.readFromTextFileInContext(file);
+    list.readFromTextFileInContext("a.txt");
     assertTrue(list.size()>0);
   }
   

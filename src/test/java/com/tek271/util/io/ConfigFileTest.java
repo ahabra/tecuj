@@ -6,7 +6,9 @@ import com.tek271.util.log.SimpleConsoleLogger;
 import junit.framework.TestCase;
 
 public class ConfigFileTest extends TestCase {
-  
+	// FIXME DO not hard code custom path
+  private static final String TEST_RESOURCES = "/Users/abdul/_src/java/tools/tecuj/v2/tecuj/src/test/resources/";
+
   private static final String pTEXT= 
     "a=1\n" +
     "b=2\n" +
@@ -67,7 +69,7 @@ public class ConfigFileTest extends TestCase {
   }
   
   public void testProcessIncludeFileExist() throws Exception {
-    String includedFile= "test/com/tek271/util/io/test1.properties";
+    String includedFile= TEST_RESOURCES + "test1.properties";
     String includedText= "p1=v1\np2=v2";
     FileIO.write(includedFile, includedText);
     
@@ -85,10 +87,10 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcessIncludeManyFile() throws Exception {
-    String includedFile1= "test/com/tek271/util/io/test1.properties";
+    String includedFile1= TEST_RESOURCES + "test1.properties";
     String includedText1= "p1=v1\np2=v2";
     FileIO.write(includedFile1, includedText1);
-    String includedFile2= "test/com/tek271/util/io/test2.properties";
+    String includedFile2= TEST_RESOURCES + "test2.properties";
     String includedText2= "pa=va\npb=vb";
     FileIO.write(includedFile2, includedText2);
     
@@ -112,7 +114,7 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcess() throws Exception {
-    String includedFile= "test/com/tek271/util/io/test1.properties";
+    String includedFile= TEST_RESOURCES + "test1.properties";
     String includedText= "p1=v1\np2=v2";
     FileIO.write(includedFile, includedText);
     
@@ -131,11 +133,11 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcessRecursive() throws Exception {
-    String includedFile1= "test/com/tek271/util/io/test1.properties";
+    String includedFile1= TEST_RESOURCES + "test1.properties";
     String includedText1= "p1=v1\np2=v2";
     FileIO.write(includedFile1, includedText1);
     
-    String includedFile2= "test/com/tek271/util/io/test2.properties";
+    String includedFile2= TEST_RESOURCES + "test2.properties";
     String includedText2= "pi=3.14\n" +
     		                  "includeFile=" + includedFile1;
     FileIO.write(includedFile2, includedText2);

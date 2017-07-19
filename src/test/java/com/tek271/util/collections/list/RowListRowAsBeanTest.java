@@ -6,7 +6,7 @@ import com.tek271.util.collections.map.MapUtility;
 
 public class RowListRowAsBeanTest extends TestCase {
 
-  private interface IPerson {
+  public interface IPerson {
     String getName();
     void setName(String name);
 

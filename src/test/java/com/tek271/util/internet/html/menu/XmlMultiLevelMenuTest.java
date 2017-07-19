@@ -39,10 +39,4 @@ public class XmlMultiLevelMenuTest extends TestCase {
     
   }
 
-  public void testCreateFromFile() throws IOException {
-    String fn= "test/com/tek271/util/internet/html/menu/cts.08.xml";
-    MultiLevelMenu menu= XmlMultiLevelMenu.createFromFile(SimpleConsoleLogger.LOGGER, fn);
-    System.out.println(menu.toString());
-  }
-  
 }

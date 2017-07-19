@@ -41,10 +41,9 @@ public class CheckboxListTest extends TestCase {
     return checkboxList;
   }
   
-  private static String readFile(String fileName) throws IOException {
-    fileName= FileIO.packageToPath(CheckboxListTest.class) + "/" + fileName;
-    return FileIO.readTextFileFromContext(fileName);
-  }
+//  private static String readFile(String fileName) throws IOException {
+//    return FileIO.readTextFileFromContext(fileName);
+//  }
   
   private static String normalize(String str) {
     str= StringUtils.trimToEmpty(str);
@@ -61,7 +60,7 @@ public class CheckboxListTest extends TestCase {
     String actual= checkboxList.toString();
     System.out.println(actual);
     actual= normalize(actual);
-    String expected= normalize(readFile("CheckboxListTest.1.html")); 
+    String expected= normalize(FileIO.readTextFileFromContext("CheckboxListTest.1.html"));
     assertEquals(expected, actual);
   }
 
@@ -87,9 +86,8 @@ public class CheckboxListTest extends TestCase {
     checkboxList.width= "400px";
     String actual= normalize(checkboxList.toString());
     System.out.println(actual);
-    String expected= normalize(readFile("CheckboxListTest.2.html")); 
+    String expected= normalize(FileIO.readTextFileFromContext("CheckboxListTest.2.html"));
     assertEquals(expected, actual);
   }
-  
-  
+
 }
