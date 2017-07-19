@@ -105,7 +105,7 @@ public class ConfigFileTest extends TestCase {
     boolean r2= ConfigFile.processIncludeFile(3, SimpleConsoleLogger.LOGGER, cf); 
     FileIO.delete(includedFile1);
     FileIO.delete(includedFile2);
-    System.out.println(cf.toString());
+//    System.out.println(cf.toString());
     assertTrue(r1);
     assertTrue(r2);
     assertEquals(6, cf.size());
@@ -152,7 +152,7 @@ public class ConfigFileTest extends TestCase {
     boolean r= cf.process(true, true, SimpleConsoleLogger.LOGGER);
     FileIO.delete(includedFile1);
     FileIO.delete(includedFile1);
-    System.out.println(cf.toString());
+//    System.out.println(cf.toString());
     assertTrue(r);
     assertEquals(6, cf.size());
     assertEquals("v1", cf.getValue("p1"));

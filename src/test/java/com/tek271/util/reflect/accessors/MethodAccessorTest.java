@@ -26,16 +26,6 @@ public class MethodAccessorTest extends TestCase {
                   MyTestParent.class.getDeclaredMethods().length +
                   Object.class.getDeclaredMethods().length;
     assertEquals(expected, methods.length);
-    for (int i=0, n= methods.length; i<n; i++) {
-      String methodName= methods[i].getName();
-      System.out.println(methodName);
-      if (methodName.equals("m2")) {
-        Class[] params= methods[i].getParameterTypes();
-        for (int j=0; j<params.length; j++) {
-          System.out.println("\t" + params[j].getName() );
-        }
-      }
-    }
   }
 
   public void testIndexOfMethod() {

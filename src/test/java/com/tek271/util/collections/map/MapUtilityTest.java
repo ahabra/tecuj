@@ -75,9 +75,7 @@ public class MapUtilityTest extends TestCase {
     map.put("2", "b");
     for (Iterator i= map.entrySet().iterator(); i.hasNext(); ) {
       Map.Entry entry= (Map.Entry) i.next();
-      System.out.println(entry.getKey() + "= " + entry.getValue());
     }
-    System.out.println("------------");
   }
 
   public void testLinkedMap() {
@@ -86,7 +84,6 @@ public class MapUtilityTest extends TestCase {
     map.put("2", "b");
     for (MapIterator i = map.mapIterator(); i.hasNext(); ) {
       i.next();
-      System.out.println(i.getKey() + "= " + i.getValue() );
     }
 
   }

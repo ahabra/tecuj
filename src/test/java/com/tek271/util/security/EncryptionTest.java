@@ -5,24 +5,18 @@ import com.tek271.util.string.StringUtility;
 
 public class EncryptionTest extends TestCase {
 
-  public void testEncryption() throws Exception {
-    String pwd= "1234567Ab";
-    String val= "123456789012345678901234567890";
-           val= "gdsalgfa ldq89bd a;jf ;j fh;fh";
-           val= "";
-    printString("Orginal", val);
+	private static final String PASSWORD = "1234567Ab";
 
-    String en= Encryption.encrypt(val, pwd);
-    printString("Encrypted", en);
-
-    String de= Encryption.decrypt(en, pwd);
-    printString("Decrypted", de);
-
-    assertEquals(val, de);
+	public void testEncryption() throws Exception {
+		checkEncDec("123456789012345678901234567890");
+		checkEncDec("gdsalgfa ldq89bd a;jf ;j fh;fh");
+		checkEncDec("");
   }
 
-  private static void printString(String aName, String aValue) {
-    System.out.println(aName + "(" + StringUtility.length(aValue) + "): " + aValue );
-  }
+  private void checkEncDec(String val) throws Exception {
+		String en= Encryption.encrypt(val, PASSWORD);
+		String de= Encryption.decrypt(en, PASSWORD);
+		assertEquals(val, de);
+	}
 
 }

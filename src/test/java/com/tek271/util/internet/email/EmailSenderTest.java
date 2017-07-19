@@ -3,6 +3,7 @@ package com.tek271.util.internet.email;
 import com.tek271.util.time.DateUt;
 
 import junit.framework.*;
+import org.junit.Ignore;
 
 public class EmailSenderTest extends TestCase {
 
@@ -37,11 +38,10 @@ public class EmailSenderTest extends TestCase {
     es.text= "This is a test mail";
     es.attachedFileNames= new String[] {"c:/temp/test.pdf"};
     try {
-      es.send();
+//      es.send();
     } catch (Exception e) {
       e.printStackTrace();
     }
-    assertTrue(true);
   }
 
 }

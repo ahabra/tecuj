@@ -40,7 +40,8 @@ public class GssUtilsTest extends TestCase {
     five.setContents("five");
     // IGraphStructuredStackNode two= three.getParent(0);
 
-    System.out.println(roots);
+    assertEquals("three", root.getDescendant("2/3").getContents());
+    assertEquals("five", root.findDescendant("5").getContents());
   }  // test1
 
   public void test2() {
@@ -63,9 +64,9 @@ public class GssUtilsTest extends TestCase {
 
     List roots= testGraph();
     IGraphStructuredStackNode root= (IGraphStructuredStackNode) roots.get(0);
-    System.out.println(roots);
+//    System.out.println(roots);
     GssUtils.sortChildren(root, comp);
-    System.out.println(roots);
+//    System.out.println(roots);
   }
 
 }
