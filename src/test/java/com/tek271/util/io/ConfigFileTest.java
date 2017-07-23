@@ -3,16 +3,40 @@ package com.tek271.util.io;
 import com.tek271.util.collections.list.ListOfString;
 import com.tek271.util.log.SimpleConsoleLogger;
 
+import com.tek271.util.reflect.ReflectUtil;
 import junit.framework.TestCase;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
+
 public class ConfigFileTest extends TestCase {
-	// FIXME DO not hard code custom path
-  private static final String TEST_RESOURCES = "/Users/abdul/_src/java/tools/tecuj/v2/tecuj/src/test/resources/";
 
   private static final String pTEXT= 
     "a=1\n" +
     "b=2\n" +
     "c=3";
+
+	private URI getResourceUri(String resourceName) {
+		URL resource = ReflectUtil.classLoader().getResource(resourceName);
+		try {
+			return resource.toURI();
+		} catch (URISyntaxException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private String getResourcesPath() {
+		String resourceName = "test2.properties";
+		URI uri = getResourceUri(resourceName);
+		String path = Paths.get(uri).toFile().getAbsolutePath();
+		return path.substring(0, path.length() - resourceName.length());
+	}
+
+	private String getPath(String resourceName) {
+		return getResourcesPath() + resourceName;
+	}
   
   private ConfigFile createConfigFile(String text) {
     ListOfString list= ListOfString.createFromString(text, "\n");
@@ -69,7 +93,7 @@ public class ConfigFileTest extends TestCase {
   }
   
   public void testProcessIncludeFileExist() throws Exception {
-    String includedFile= TEST_RESOURCES + "test1.properties";
+    String includedFile= getPath("test1.properties");
     String includedText= "p1=v1\np2=v2";
     FileIO.write(includedFile, includedText);
     
@@ -87,10 +111,10 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcessIncludeManyFile() throws Exception {
-    String includedFile1= TEST_RESOURCES + "test1.properties";
+    String includedFile1= getPath("test1.properties");
     String includedText1= "p1=v1\np2=v2";
     FileIO.write(includedFile1, includedText1);
-    String includedFile2= TEST_RESOURCES + "test2.properties";
+    String includedFile2= getPath("test2.properties");
     String includedText2= "pa=va\npb=vb";
     FileIO.write(includedFile2, includedText2);
     
@@ -114,7 +138,7 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcess() throws Exception {
-    String includedFile= TEST_RESOURCES + "test1.properties";
+    String includedFile= getPath("test1.properties");
     String includedText= "p1=v1\np2=v2";
     FileIO.write(includedFile, includedText);
     
@@ -133,11 +157,11 @@ public class ConfigFileTest extends TestCase {
   }
 
   public void testProcessRecursive() throws Exception {
-    String includedFile1= TEST_RESOURCES + "test1.properties";
+    String includedFile1= getPath( "test1.properties");
     String includedText1= "p1=v1\np2=v2";
     FileIO.write(includedFile1, includedText1);
     
-    String includedFile2= TEST_RESOURCES + "test2.properties";
+    String includedFile2= getPath("test2.properties");
     String includedText2= "pi=3.14\n" +
     		                  "includeFile=" + includedFile1;
     FileIO.write(includedFile2, includedText2);
